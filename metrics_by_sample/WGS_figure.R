@@ -10,7 +10,7 @@ for(i in 1:length(filelist))
   to_plot<-as.data.frame(read.csv(filelist[[i]], row.names = 1))
   for(j in 1:4 )
   {
-    graphics.off()
+    #graphics.off()
     print(ggplot(to_plot) +
             geom_point(aes(x=mean_coverage, y=to_plot[,j], col=Sample), size=5) +
             labs(x="", y=metrics[j]) +
@@ -22,7 +22,7 @@ for(i in 1:length(filelist))
                   legend.title=element_text(size=22,face="bold"),
                   legend.text=element_text(size=20))
     )
-    ggsave(paste(output_dir, '/', strsplit(basename(filelist), '\\.')[[i]][1], '_', metrics[j], '.pdf', sep=''), device = 'pdf', width=11, height=8.5)
+    #ggsave(paste(output_dir, '/', strsplit(basename(filelist), '\\.')[[i]][1], '_', metrics[j], '.pdf', sep=''), device = 'pdf', width=11, height=8.5)
   }
   
 }
