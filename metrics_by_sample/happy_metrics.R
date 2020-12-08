@@ -31,8 +31,8 @@ if(exome && rep_1 )
   protocol<-c("2X_DS", "2X", "5X_DS", "5X", "30X_DS", "30X" )
   
 } else if(exome && !rep_1) {
-  args[1]<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/technical_replicate/happy_WES"
-  args[2]<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/technical_replicate/happy_WES"
+  args[1]<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/illumina/technical_replicate/happy_WES"
+  args[2]<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/illumina/technical_replicate/happy_WES"
   
   IDs<-c("HG002_WGS_30X", "HG002_IDT", "HG002_IDT", "HG002_XTV2_4plex", "HG002_XT", "HG002_XTV2_1plex", "HG002_XTV2_4plex",   
          "HG003_WGS_30X", "HG003_IDT", "HG003_XT", "HG003_XTV2_1plex", "HG003_XTV2_4plex", 
