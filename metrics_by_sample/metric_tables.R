@@ -15,10 +15,10 @@ make_table<-function(input_dir, output_dir, X_axis)
   {
     files[[i]]<-read.csv(filenames[[i]])
     temp<-split(files[[i]], paste(files[[i]]$Type, files[[i]]$Filter))
-    metrics[['snp_all']][[i]]<-temp[["SNP ALL"]][c(11:14)]
-    metrics[['indel_all']][[i]]<-temp[["INDEL ALL"]][c(11:14)]
-    metrics[['snp_pass']][[i]]<-temp[["SNP PASS"]][c(11:14)]
-    metrics[['indel_pass']][[i]]<-temp[["INDEL PASS"]][c(11:14)]
+    metrics[['snp_all']][[i]]<-cbind(temp[["SNP ALL"]][c(11:14, 4:5)], temp[["SNP ALL"]][6]-temp[["SNP ALL"]][7]-temp[["SNP ALL"]][8], temp[["SNP ALL"]]$QUERY.FP)
+    metrics[['indel_all']][[i]]<-cbind(temp[["INDEL ALL"]][c(11:14, 4:5)], temp[["INDEL ALL"]][6]-temp[["INDEL ALL"]][7]-temp[["INDEL ALL"]][8], temp[["INDEL ALL"]]$QUERY.FP)
+    metrics[['snp_pass']][[i]]<-cbind(temp[["SNP PASS"]][c(11:14, 4:5)], temp[["SNP PASS"]][6]-temp[["SNP PASS"]][7]-temp[["SNP PASS"]][8], temp[["SNP PASS"]]$QUERY.FP)
+    metrics[['indel_pass']][[i]]<-cbind(temp[["SNP ALL"]][c(11:14, 4:5)], temp[["INDEL PASS"]][6]-temp[["INDEL PASS"]][7]-temp[["INDEL PASS"]][8], temp[["INDEL PASS"]]$QUERY.FP)
   }
   
   for(i in 1:length(metrics))
@@ -27,9 +27,14 @@ make_table<-function(input_dir, output_dir, X_axis)
     metrics[[i]]$Sample<-substr(basename(filenames), 1, 5)
     metrics[[i]]$X_axis<-X_axis
     rownames(metrics[[i]])<-basename(filenames)
+    colnames(metrics[[i]])[c(7,8)]<-c("QUERY.TP", "QUERY.FP")
     write.csv(metrics[[i]], paste(output_dir, '/', names(metrics)[i], '.csv', sep = '') )
   }
 }
+
+
+## -----------------------------------------------------------------------------------------------------------------
+
 
 input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/WGS_all"
 output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/illumina_WGS"
@@ -40,12 +45,12 @@ X_axis<-c(41.7, 2.6, 6.6, 1.6, 1.6, 4.4, 4.4,
 
 # input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/illumina/illumina_round2"
 # output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/illumina_WES"
-#   
-# X_axis<-c("4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B",
-#            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B",
-#            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
-#            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B")
-
-make_table(input_dir, output_dir, X_axis)
+# 
+# X_axis<-c("4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
+#            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT",
+#            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT",
+#            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT")
+# 
+# make_table(input_dir, output_dir, X_axis)
 
 
