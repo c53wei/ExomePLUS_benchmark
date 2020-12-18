@@ -36,21 +36,26 @@ make_table<-function(input_dir, output_dir, X_axis)
 ## -----------------------------------------------------------------------------------------------------------------
 
 
-input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/WGS_all"
-output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/illumina_WGS"
-
-X_axis<-c(41.7, 2.6, 6.6, 1.6, 1.6, 4.4, 4.4,
-          30, 2.0, 6.4, 1.7, 1.7, 6.2, 6.2,
-          30, 3.2, 5.5, 1.9, 2.0, 4.8, 4.8)
-
-# input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/illumina/illumina_round2"
-# output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/illumina_WES"
+# input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/WGS_all"
+# output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/illumina_WGS"
 # 
-# X_axis<-c("4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
+# X_axis<-c(41.7, 2.6, 6.6, 1.6, 1.6, 4.4, 4.4,
+#           30, 2.0, 6.4, 1.7, 1.7, 6.2, 6.2,
+#           30, 3.2, 5.5, 1.9, 2.0, 4.8, 4.8)
+
+input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/mgi/happy_WES"
+output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/mgi_WES"
+
+X_axis<-c( "4plex_A", "4plex_B", "8plex_A", "8plex_B", "8plex_B",
+           "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
+           "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
+           "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B")
+
+# X_axis<-c("4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B",
 #            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT",
 #            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT",
 #            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT")
-# 
-# make_table(input_dir, output_dir, X_axis)
+
+make_table(input_dir, output_dir, X_axis)
 
 
