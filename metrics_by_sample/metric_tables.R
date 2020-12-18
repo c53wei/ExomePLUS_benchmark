@@ -43,13 +43,17 @@ make_table<-function(input_dir, output_dir, X_axis)
 #           30, 2.0, 6.4, 1.7, 1.7, 6.2, 6.2,
 #           30, 3.2, 5.5, 1.9, 2.0, 4.8, 4.8)
 
-input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/mgi/happy_WES"
-output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/mgi_WES"
+input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/mgi/happy_WGS"
+output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/mgi_WGS"
 
-X_axis<-c( "4plex_A", "4plex_B", "8plex_A", "8plex_B", "8plex_B",
-           "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
-           "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
-           "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B")
+X_axis<-c(4.3, 4.1, 5.8, 4.6, 4.0, 4.0, 5.1, 5.4, 
+          5.1, 3.9, 5.1, 7.0, 4.0, 4.3, 5.8, 4.6, 
+          4.2, 5.5, 5.4, 4.2, 4.4, 5.1, 4.9, 4.8)
+
+# X_axis<-c( "4plex_A", "4plex_B", "8plex_A", "8plex_B", "8plex_B",
+#            "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
+#            "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", 
+#            "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B")
 
 # X_axis<-c("4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B",
 #            "4plex_1", "4plex_A", "4plex_B", "8plex_A", "8plex_A", "8plex_B", "8plex_B", "XT",
