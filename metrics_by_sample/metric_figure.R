@@ -1,6 +1,6 @@
 library(ggplot2)
-input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/mgi_WGS"
-output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/mgi/happy_WGS/figures"
+input_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/ExomePLUS_benchmark/metrics_by_sample/metric_data/illumina_WES"
+output_dir<-"/Users/clarewei/Documents/BME/Co-Op/McGill/ExomePLUS/metrics_by_sample/illumina/illumina_round2/WES_figures"
 
 filelist<-list.files(input_dir, full.names=T, pattern='.csv')
 metrics<-c('Recall', 'Precision', 'Frac_UNK', 'F1_Score')
