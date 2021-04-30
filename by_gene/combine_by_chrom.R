@@ -33,8 +33,6 @@ prep_data<-function(to_combine)
 args=commandArgs(T)
 
 ## Rscript combine_by_chrom.R <INPUT_DIR> <OUTPUT_DIR>
-# args[1]<-"~/Documents/BME/Co-Op/McGill/R/ExomePLUS/CDS/bam_vcfs/9"
-# args[2]<-"~/Documents/BME/Co-Op/McGill/R/ExomePLUS/CDS/bam_vcfs/output"
 
 input_dir<-args[1]
 output_dir<-args[2]
